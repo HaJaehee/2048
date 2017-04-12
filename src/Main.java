@@ -36,6 +36,9 @@ public class Main {
 //				if (a<0 || a==1 || a>1024 || !isPowerOfTwo(a)) {
 //					return;
 //				}
+				if (biggest < a) {
+					biggest = a;
+				}
 				N1[j++]=a;
 			}
 //			if (j != N) {
@@ -143,9 +146,7 @@ public class Main {
 				}
 				
 				lastNonZero = i;
-				if (biggest < arg[i]) {
-					biggest = arg[i];
-				}
+				
 				inner: for (int j = i+1; j<N ; j++) {
 					if (arg[j]!=0 && arg[i]!=arg[j]) {
 						nextNRow[nextI]=arg[i];
@@ -178,9 +179,7 @@ public class Main {
 					continue outer;
 				}
 				lastNonZero = i;
-				if (biggest < arg[i]) {
-					biggest = arg[i];
-				}
+				
 				inner: for (int j = i-1; j>=0 ; j--) {
 					if (arg[j]!=0 && arg[i]!=arg[j]) {
 						nextNRow[nextI]=arg[i];
@@ -225,9 +224,7 @@ public class Main {
 					continue outer;
 				}
 				lastNonZero = i;
-				if (biggest < temp[i]) {
-					biggest = temp[i];
-				}
+				
 				inner: for (int j = i+1; j<N ; j++) {
 					if (temp[j]!=0 && temp[i]!=temp[j]) {
 						nextColN[nextI][colNum]=temp[i];
@@ -262,9 +259,7 @@ public class Main {
 					continue outer;
 				}
 				lastNonZero = i;
-				if (biggest < temp[i]) {
-					biggest = temp[i];
-				}
+				
 				inner: for (int j = i-1; j>=0 ; j--) {
 					if (temp[j]!=0 && temp[i]!=temp[j]) {
 						nextColN[nextI][colNum]=temp[i];
